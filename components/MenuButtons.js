@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-export default function MenuButtons() {
+export default function MenuButtons({ navigation }) {
   const items = [
     {
       id: 1,
@@ -27,11 +27,16 @@ export default function MenuButtons() {
     },
   ];
 
+  const openMeeting = () => {
+    navigation.navigate("Room");
+  };
+
   return (
     <View style={styles.container}>
       {items.map((item, index) => (
         <View style={styles.buttonContainer} key={index}>
           <TouchableOpacity
+            onPress={() => openMeeting()}
             style={{
               width: 50,
               height: 50,

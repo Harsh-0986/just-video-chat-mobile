@@ -12,7 +12,7 @@ import Header from "../components/Header";
 import MenuButtons from "../components/MenuButtons";
 import SearchBar from "../components/SearchBar";
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <SafeAreaView
@@ -25,7 +25,7 @@ export default function Home() {
         {/* SearchBar */}
         <SearchBar />
         {/* Menu */}
-        <MenuButtons />
+        <MenuButtons navigation={navigation} />
         {/* Contacts */}
         <ContactsMenu />
       </SafeAreaView>
